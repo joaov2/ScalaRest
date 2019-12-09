@@ -60,7 +60,7 @@ val Http4sVersion = "0.20.0"
 val CirceVersion = "0.11.1"
 val LogbackVersion = "1.2.3"
 lazy val http4s = project
-  .dependsOn(core)
+  .dependsOn(core, doobie)
   .settings(
     scalacOptions ++= Seq("-Ypartial-unification"),
     libraryDependencies ++= Seq(
@@ -78,6 +78,7 @@ lazy val http4s = project
 lazy val doobie = project
   .dependsOn(core)
   .settings(libraryDependencies ++= Seq(
+    "mysql" % "mysql-connector-java" % "8.0.15",
     "org.tpolecat" %% "doobie-core"      % "0.7.0",
     "org.tpolecat" %% "doobie-h2"        % "0.7.0"
   ))
