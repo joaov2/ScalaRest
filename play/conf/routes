@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+GET     /play/:id                           controllers.PlayController.playGet(id : String)
+
+POST    /play                               controllers.PlayController.playPost
+
+PUT     /play/:id                           controllers.PlayController.playPut(id : String)
+
+DELETE  /play/:id                           controllers.PlayController.playDelete(id : String)
